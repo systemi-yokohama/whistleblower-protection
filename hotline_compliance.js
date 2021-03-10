@@ -1,6 +1,11 @@
 function submitForm(e) {
-  var content = "";
 
+  var s = SpreadsheetApp.openById("1hxE7cBpoPz3o5o2EJtExOCUFH5SFDoOiG-vW1MrJByo").getSheetByName('送信アドレス');
+
+  var hotline = s.getRange('A:A').getNextDataCell(SpreadsheetApp.Direction.DOWN).getValue();
+  var compliance = s.getRange('B:B').getNextDataCell(SpreadsheetApp.Direction.DOWN).getValue();
+
+  var content = "";
   var itemResponses = e.response.getItemResponses();
   for (var i = 0; i < itemResponses.length; i++) {
     var itemResponse = itemResponses[i];
@@ -10,13 +15,13 @@ function submitForm(e) {
     content += answer;
     if (title === "相談内容を選択して下さい") {
       if (answer === "ホットライン") {
-        var address = "y.egusa@gs.systemi.co.jp";
+        var address = hotline;
       }
       else if (answer === "コンプライアンス") {
-        var address = "y.egusa@systemi.co.jp";
+        var address = compliance;
       }
     }
   }
-  title = "お問い合わせが送信されました";
+  var title = "お問い合わせが送信されました";
   GmailApp.sendEmail(address, title, content);
 }

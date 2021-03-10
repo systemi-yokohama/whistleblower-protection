@@ -1,6 +1,4 @@
 function submitForm(e) {
-
-  var title = "お問い合わせが送信されました";
   var content = "";
 
   var itemResponses = e.response.getItemResponses();
@@ -10,14 +8,15 @@ function submitForm(e) {
     var answer = itemResponse.getResponse();
     content += '\n\n[' + title + ']\n\n';
     content += answer;
-    if (title === "内容") {
-      if (answer === "入力１") {
+    if (title === "相談内容を選択して下さい") {
+      if (answer === "ホットライン") {
         var address = "y.egusa@gs.systemi.co.jp";
       }
-      else if (answer === "入力２") {
+      else if (answer === "コンプライアンス") {
         var address = "y.egusa@systemi.co.jp";
       }
     }
   }
+  title = "お問い合わせが送信されました";
   GmailApp.sendEmail(address, title, content);
 }

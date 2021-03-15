@@ -1,0 +1,24 @@
+{
+  "name": "whistleblower-protection",
+  "version": "0.1.0",
+  "description": "ホットラインやコンプライアンス相談窓口のフォーム及びGASによる通知",
+  "main": "main.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/systemi-yokohama/whistleblower-protection.git"
+  },
+  "author": "y.egusa@systemi.co.jp",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/systemi-yokohama/whistleblower-protection/issues"
+  },
+  "homepage": "https://github.com/systemi-yokohama/whistleblower-protection#readme",
+  "devDependencies": {
+    "eslint": "^7.22.0",
+    "eslint-config-standard": "^16.0.2",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^4.3.1",
+    "standard": "^16.0.3"
+  }
+}

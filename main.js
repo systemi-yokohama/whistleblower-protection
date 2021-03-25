@@ -21,6 +21,10 @@ function submitForm (e) {
   let mailAddress = ''
   let content = ''
   let mailSubject = ''
+  const options = {
+    from: 'noreply@systemi.co.jp',
+    name: SpreadsheetApp.openById(SPREADSHEET_ID).getName()
+  }
 
   const mailAddresses = getMailAddresses()
 
@@ -42,5 +46,5 @@ function submitForm (e) {
     }
   }
 
-  GmailApp.sendEmail(mailAddress, mailSubject, content)
+  GmailApp.sendEmail(mailAddress, mailSubject, content, options)
 }
